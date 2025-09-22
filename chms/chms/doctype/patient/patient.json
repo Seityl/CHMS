@@ -1,0 +1,276 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "field:patient_id",
+	"creation": "2025-01-21 10:00:00.000000",
+	"doctype": "DocType",
+	"document_type": "Document",
+	"engine": "InnoDB",
+	"field_order": [
+		"patient_details_section",
+		"patient_id",
+		"first_name",
+		"last_name",
+		"full_name",
+		"column_break_pkm4",
+		"gender",
+		"date_of_birth",
+		"age",
+		"contact_information_section",
+		"phone",
+		"email",
+		"column_break_dmk5",
+		"address",
+		"emergency_contact",
+		"emergency_phone",
+		"medical_information_section",
+		"blood_type",
+		"allergies",
+		"column_break_lmn6",
+		"current_medications",
+		"medical_history",
+		"company_details_section",
+		"company",
+		"department",
+		"column_break_xyz7",
+		"employee_id",
+		"job_title",
+		"system_information_section",
+		"created_by_clinic",
+		"column_break_abc8",
+		"status",
+		"notes"
+	],
+	"fields": [
+		{
+			"fieldname": "patient_details_section",
+			"fieldtype": "Section Break",
+			"label": "Patient Details"
+		},
+		{
+			"fieldname": "patient_id",
+			"fieldtype": "Data",
+			"label": "Patient ID",
+			"reqd": 1,
+			"unique": 1
+		},
+		{
+			"fieldname": "first_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "First Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "last_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Last Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "full_name",
+			"fieldtype": "Data",
+			"label": "Full Name",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_pkm4",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "gender",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Gender",
+			"options": "Male\nFemale\nOther",
+			"reqd": 1
+		},
+		{
+			"fieldname": "date_of_birth",
+			"fieldtype": "Date",
+			"label": "Date of Birth",
+			"reqd": 1
+		},
+		{
+			"fieldname": "age",
+			"fieldtype": "Int",
+			"label": "Age",
+			"read_only": 1
+		},
+		{
+			"fieldname": "contact_information_section",
+			"fieldtype": "Section Break",
+			"label": "Contact Information"
+		},
+		{
+			"fieldname": "phone",
+			"fieldtype": "Data",
+			"label": "Phone Number",
+			"reqd": 1
+		},
+		{
+			"fieldname": "email",
+			"fieldtype": "Data",
+			"label": "Email Address",
+			"options": "Email"
+		},
+		{
+			"fieldname": "column_break_dmk5",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "address",
+			"fieldtype": "Small Text",
+			"label": "Address"
+		},
+		{
+			"fieldname": "emergency_contact",
+			"fieldtype": "Data",
+			"label": "Emergency Contact Name"
+		},
+		{
+			"fieldname": "emergency_phone",
+			"fieldtype": "Data",
+			"label": "Emergency Contact Phone"
+		},
+		{
+			"fieldname": "medical_information_section",
+			"fieldtype": "Section Break",
+			"label": "Medical Information"
+		},
+		{
+			"fieldname": "blood_type",
+			"fieldtype": "Select",
+			"label": "Blood Type",
+			"options": "\nA+\nA-\nB+\nB-\nAB+\nAB-\nO+\nO-"
+		},
+		{
+			"fieldname": "allergies",
+			"fieldtype": "Small Text",
+			"label": "Known Allergies"
+		},
+		{
+			"fieldname": "column_break_lmn6",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "current_medications",
+			"fieldtype": "Small Text",
+			"label": "Current Medications"
+		},
+		{
+			"fieldname": "medical_history",
+			"fieldtype": "Small Text",
+			"label": "Medical History"
+		},
+		{
+			"fieldname": "company_details_section",
+			"fieldtype": "Section Break",
+			"label": "Company Details"
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Company"
+		},
+		{
+			"fieldname": "department",
+			"fieldtype": "Data",
+			"label": "Department"
+		},
+		{
+			"fieldname": "column_break_xyz7",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "employee_id",
+			"fieldtype": "Data",
+			"label": "Employee ID"
+		},
+		{
+			"fieldname": "job_title",
+			"fieldtype": "Data",
+			"label": "Job Title"
+		},
+		{
+			"fieldname": "system_information_section",
+			"fieldtype": "Section Break",
+			"label": "System Information"
+		},
+		{
+			"fieldname": "created_by_clinic",
+			"fieldtype": "Link",
+			"label": "Created by Clinic",
+			"options": "Clinic"
+		},
+		{
+			"fieldname": "column_break_abc8",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Status",
+			"options": "Active\nInactive\nArchived",
+			"default": "Active"
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Small Text",
+			"label": "Additional Notes"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"modified": "2025-01-21 10:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "CHMS",
+	"name": "Patient",
+	"naming_rule": "By fieldname",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Healthcare Administrator",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Healthcare Practitioner",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"title_field": "full_name",
+	"track_changes": 1
+}

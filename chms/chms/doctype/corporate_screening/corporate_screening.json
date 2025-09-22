@@ -1,0 +1,406 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "naming_series:",
+	"creation": "2025-01-21 10:00:00.000000",
+	"doctype": "DocType",
+	"document_type": "Document",
+	"engine": "InnoDB",
+	"field_order": [
+		"naming_series",
+		"screening_details_section",
+		"company_name",
+		"screening_date_from",
+		"screening_date_to",
+		"column_break_abc1",
+		"clinic",
+		"event_title",
+		"status",
+		"total_participants",
+		"screening_parameters_section",
+		"bmi_screening",
+		"blood_pressure_screening",
+		"blood_glucose_screening",
+		"column_break_def2",
+		"body_fat_screening",
+		"waist_circumference_screening",
+		"lifestyle_assessment",
+		"additional_tests_section",
+		"cholesterol_screening",
+		"hba1c_screening",
+		"column_break_ghi3",
+		"other_screening_tests",
+		"wellness_wheel_assessment",
+		"participant_demographics_section",
+		"male_participants",
+		"female_participants",
+		"column_break_jkl4",
+		"age_group_18_30",
+		"age_group_31_50",
+		"age_group_51_plus",
+		"key_findings_section",
+		"obesity_prevalence",
+		"hypertension_prevalence",
+		"diabetes_prevalence",
+		"column_break_mno5",
+		"smoking_prevalence",
+		"high_risk_participants",
+		"follow_up_recommendations",
+		"report_generation_section",
+		"report_generated",
+		"report_date",
+		"column_break_pqr6",
+		"report_generated_by",
+		"executive_summary",
+		"system_information_section",
+		"created_by_user",
+		"coordinator",
+		"column_break_stu7",
+		"cost_per_participant",
+		"total_cost",
+		"notes"
+	],
+	"fields": [
+		{
+			"fieldname": "naming_series",
+			"fieldtype": "Select",
+			"label": "Series",
+			"options": "CS-.YYYY.-.####",
+			"reqd": 1
+		},
+		{
+			"fieldname": "screening_details_section",
+			"fieldtype": "Section Break",
+			"label": "Screening Details"
+		},
+		{
+			"fieldname": "company_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Company Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "screening_date_from",
+			"fieldtype": "Date",
+			"in_list_view": 1,
+			"label": "Screening Date From",
+			"reqd": 1
+		},
+		{
+			"fieldname": "screening_date_to",
+			"fieldtype": "Date",
+			"label": "Screening Date To"
+		},
+		{
+			"fieldname": "column_break_abc1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "clinic",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Clinic",
+			"options": "Clinic",
+			"reqd": 1
+		},
+		{
+			"fieldname": "event_title",
+			"fieldtype": "Data",
+			"label": "Event Title"
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Status",
+			"options": "Planned\nIn Progress\nCompleted\nReport Generated\nCancelled",
+			"default": "Planned"
+		},
+		{
+			"fieldname": "total_participants",
+			"fieldtype": "Int",
+			"label": "Total Participants",
+			"read_only": 1
+		},
+		{
+			"fieldname": "screening_parameters_section",
+			"fieldtype": "Section Break",
+			"label": "Screening Parameters"
+		},
+		{
+			"fieldname": "bmi_screening",
+			"fieldtype": "Check",
+			"label": "BMI Screening",
+			"default": 1
+		},
+		{
+			"fieldname": "blood_pressure_screening",
+			"fieldtype": "Check",
+			"label": "Blood Pressure Screening",
+			"default": 1
+		},
+		{
+			"fieldname": "blood_glucose_screening",
+			"fieldtype": "Check",
+			"label": "Blood Glucose Screening",
+			"default": 1
+		},
+		{
+			"fieldname": "column_break_def2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "body_fat_screening",
+			"fieldtype": "Check",
+			"label": "Body Fat Screening",
+			"default": 1
+		},
+		{
+			"fieldname": "waist_circumference_screening",
+			"fieldtype": "Check",
+			"label": "Waist Circumference Screening",
+			"default": 1
+		},
+		{
+			"fieldname": "lifestyle_assessment",
+			"fieldtype": "Check",
+			"label": "Lifestyle Assessment",
+			"default": 1
+		},
+		{
+			"fieldname": "additional_tests_section",
+			"fieldtype": "Section Break",
+			"label": "Additional Tests"
+		},
+		{
+			"fieldname": "cholesterol_screening",
+			"fieldtype": "Check",
+			"label": "Cholesterol Screening"
+		},
+		{
+			"fieldname": "hba1c_screening",
+			"fieldtype": "Check",
+			"label": "HbA1c Screening"
+		},
+		{
+			"fieldname": "column_break_ghi3",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "other_screening_tests",
+			"fieldtype": "Small Text",
+			"label": "Other Screening Tests"
+		},
+		{
+			"fieldname": "wellness_wheel_assessment",
+			"fieldtype": "Check",
+			"label": "Wellness Wheel Assessment",
+			"default": 1
+		},
+		{
+			"fieldname": "participant_demographics_section",
+			"fieldtype": "Section Break",
+			"label": "Participant Demographics"
+		},
+		{
+			"fieldname": "male_participants",
+			"fieldtype": "Int",
+			"label": "Male Participants",
+			"read_only": 1
+		},
+		{
+			"fieldname": "female_participants",
+			"fieldtype": "Int",
+			"label": "Female Participants",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_jkl4",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "age_group_18_30",
+			"fieldtype": "Int",
+			"label": "Age Group 18-30",
+			"read_only": 1
+		},
+		{
+			"fieldname": "age_group_31_50",
+			"fieldtype": "Int",
+			"label": "Age Group 31-50",
+			"read_only": 1
+		},
+		{
+			"fieldname": "age_group_51_plus",
+			"fieldtype": "Int",
+			"label": "Age Group 51+",
+			"read_only": 1
+		},
+		{
+			"fieldname": "key_findings_section",
+			"fieldtype": "Section Break",
+			"label": "Key Findings"
+		},
+		{
+			"fieldname": "obesity_prevalence",
+			"fieldtype": "Float",
+			"label": "Obesity Prevalence (%)",
+			"precision": "1",
+			"read_only": 1
+		},
+		{
+			"fieldname": "hypertension_prevalence",
+			"fieldtype": "Float",
+			"label": "Hypertension Prevalence (%)",
+			"precision": "1",
+			"read_only": 1
+		},
+		{
+			"fieldname": "diabetes_prevalence",
+			"fieldtype": "Float",
+			"label": "Diabetes Prevalence (%)",
+			"precision": "1",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_mno5",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "smoking_prevalence",
+			"fieldtype": "Float",
+			"label": "Smoking Prevalence (%)",
+			"precision": "1",
+			"read_only": 1
+		},
+		{
+			"fieldname": "high_risk_participants",
+			"fieldtype": "Int",
+			"label": "High Risk Participants",
+			"read_only": 1
+		},
+		{
+			"fieldname": "follow_up_recommendations",
+			"fieldtype": "Text",
+			"label": "Follow-up Recommendations"
+		},
+		{
+			"fieldname": "report_generation_section",
+			"fieldtype": "Section Break",
+			"label": "Report Generation"
+		},
+		{
+			"fieldname": "report_generated",
+			"fieldtype": "Check",
+			"label": "Report Generated"
+		},
+		{
+			"fieldname": "report_date",
+			"fieldtype": "Date",
+			"depends_on": "report_generated",
+			"label": "Report Date",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_pqr6",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "report_generated_by",
+			"fieldtype": "Data",
+			"depends_on": "report_generated",
+			"label": "Report Generated By",
+			"read_only": 1
+		},
+		{
+			"fieldname": "executive_summary",
+			"fieldtype": "Text",
+			"depends_on": "report_generated",
+			"label": "Executive Summary"
+		},
+		{
+			"fieldname": "system_information_section",
+			"fieldtype": "Section Break",
+			"label": "System Information"
+		},
+		{
+			"fieldname": "created_by_user",
+			"fieldtype": "Data",
+			"label": "Created By",
+			"read_only": 1
+		},
+		{
+			"fieldname": "coordinator",
+			"fieldtype": "Data",
+			"label": "Event Coordinator"
+		},
+		{
+			"fieldname": "column_break_stu7",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "cost_per_participant",
+			"fieldtype": "Currency",
+			"label": "Cost per Participant"
+		},
+		{
+			"fieldname": "total_cost",
+			"fieldtype": "Currency",
+			"label": "Total Cost",
+			"read_only": 1
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Small Text",
+			"label": "Additional Notes"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"is_submittable": 1,
+	"links": [],
+	"modified": "2025-01-21 10:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "CHMS",
+	"name": "Corporate Screening",
+	"naming_rule": "By Naming Series",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"submit": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Healthcare Administrator",
+			"share": 1,
+			"submit": 1,
+			"write": 1
+		},
+		{
+			"read": 1,
+			"report": 1,
+			"role": "Healthcare Practitioner"
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"title_field": "company_name",
+	"track_changes": 1
+}

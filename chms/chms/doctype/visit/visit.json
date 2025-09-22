@@ -1,0 +1,421 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "naming_series:",
+	"creation": "2025-01-21 10:00:00.000000",
+	"doctype": "DocType",
+	"document_type": "Document",
+	"engine": "InnoDB",
+	"field_order": [
+		"naming_series",
+		"visit_information_section",
+		"patient",
+		"patient_name",
+		"clinic",
+		"column_break_abc1",
+		"visit_date",
+		"visit_time",
+		"visit_type",
+		"status",
+		"practitioner",
+		"chief_complaint",
+		"vitals_section",
+		"height",
+		"weight",
+		"bmi",
+		"column_break_def2",
+		"blood_pressure_systolic",
+		"blood_pressure_diastolic",
+		"heart_rate",
+		"temperature",
+		"additional_measurements_section",
+		"blood_glucose",
+		"body_fat_percentage",
+		"waist_circumference",
+		"column_break_ghi3",
+		"cholesterol_total",
+		"hba1c",
+		"other_measurements",
+		"lifestyle_factors_section",
+		"smoking_habits",
+		"alcohol_consumption",
+		"column_break_jkl4",
+		"exercise_frequency",
+		"sleep_hours",
+		"stress_level",
+		"clinical_assessment_section",
+		"diagnosis",
+		"assessment_notes",
+		"column_break_mno5",
+		"treatment_plan",
+		"medications_prescribed",
+		"follow_up_section",
+		"follow_up_required",
+		"follow_up_date",
+		"column_break_pqr6",
+		"referral_required",
+		"referral_to",
+		"system_information_section",
+		"created_by_user",
+		"duration_minutes",
+		"column_break_stu7",
+		"billing_status",
+		"notes"
+	],
+	"fields": [
+		{
+			"fieldname": "naming_series",
+			"fieldtype": "Select",
+			"label": "Series",
+			"options": "VST-.YYYY.-.####",
+			"reqd": 1
+		},
+		{
+			"fieldname": "visit_information_section",
+			"fieldtype": "Section Break",
+			"label": "Visit Information"
+		},
+		{
+			"fieldname": "patient",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Patient",
+			"options": "Patient",
+			"reqd": 1
+		},
+		{
+			"fieldname": "patient_name",
+			"fieldtype": "Data",
+			"label": "Patient Name",
+			"read_only": 1
+		},
+		{
+			"fieldname": "clinic",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Clinic",
+			"options": "Clinic",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_abc1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "visit_date",
+			"fieldtype": "Date",
+			"in_list_view": 1,
+			"label": "Visit Date",
+			"reqd": 1,
+			"default": "Today"
+		},
+		{
+			"fieldname": "visit_time",
+			"fieldtype": "Time",
+			"label": "Visit Time"
+		},
+		{
+			"fieldname": "visit_type",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Visit Type",
+			"options": "Routine Checkup\nCorporate Screening\nFollow-up\nEmergency\nConsultation\nOther"
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Status",
+			"options": "Scheduled\nIn Progress\nCompleted\nCancelled\nNo Show",
+			"default": "In Progress"
+		},
+		{
+			"fieldname": "practitioner",
+			"fieldtype": "Data",
+			"label": "Practitioner"
+		},
+		{
+			"fieldname": "chief_complaint",
+			"fieldtype": "Small Text",
+			"label": "Chief Complaint"
+		},
+		{
+			"fieldname": "vitals_section",
+			"fieldtype": "Section Break",
+			"label": "Vital Signs"
+		},
+		{
+			"fieldname": "height",
+			"fieldtype": "Float",
+			"label": "Height (cm)",
+			"precision": "1"
+		},
+		{
+			"fieldname": "weight",
+			"fieldtype": "Float",
+			"label": "Weight (kg)",
+			"precision": "1"
+		},
+		{
+			"fieldname": "bmi",
+			"fieldtype": "Float",
+			"label": "BMI",
+			"read_only": 1,
+			"precision": "2"
+		},
+		{
+			"fieldname": "column_break_def2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "blood_pressure_systolic",
+			"fieldtype": "Int",
+			"label": "Blood Pressure Systolic (mmHg)"
+		},
+		{
+			"fieldname": "blood_pressure_diastolic",
+			"fieldtype": "Int",
+			"label": "Blood Pressure Diastolic (mmHg)"
+		},
+		{
+			"fieldname": "heart_rate",
+			"fieldtype": "Int",
+			"label": "Heart Rate (bpm)"
+		},
+		{
+			"fieldname": "temperature",
+			"fieldtype": "Float",
+			"label": "Temperature (°C)",
+			"precision": "1"
+		},
+		{
+			"fieldname": "additional_measurements_section",
+			"fieldtype": "Section Break",
+			"label": "Additional Measurements"
+		},
+		{
+			"fieldname": "blood_glucose",
+			"fieldtype": "Float",
+			"label": "Blood Glucose (mg/dL)",
+			"precision": "1"
+		},
+		{
+			"fieldname": "body_fat_percentage",
+			"fieldtype": "Float",
+			"label": "Body Fat Percentage (%)",
+			"precision": "1"
+		},
+		{
+			"fieldname": "waist_circumference",
+			"fieldtype": "Float",
+			"label": "Waist Circumference (inches)",
+			"precision": "1"
+		},
+		{
+			"fieldname": "column_break_ghi3",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "cholesterol_total",
+			"fieldtype": "Float",
+			"label": "Total Cholesterol (mg/dL)",
+			"precision": "1"
+		},
+		{
+			"fieldname": "hba1c",
+			"fieldtype": "Float",
+			"label": "HbA1c (%)",
+			"precision": "1"
+		},
+		{
+			"fieldname": "other_measurements",
+			"fieldtype": "Small Text",
+			"label": "Other Measurements"
+		},
+		{
+			"fieldname": "lifestyle_factors_section",
+			"fieldtype": "Section Break",
+			"label": "Lifestyle Factors"
+		},
+		{
+			"fieldname": "smoking_habits",
+			"fieldtype": "Select",
+			"label": "Smoking Habits",
+			"options": "\nNever\nFormer Smoker\nOccasionally\nDaily"
+		},
+		{
+			"fieldname": "alcohol_consumption",
+			"fieldtype": "Select",
+			"label": "Alcohol Consumption",
+			"options": "\nNone\nOccasionally\nSocial Drinking\nBinge Drinking\nHeavy Drinking"
+		},
+		{
+			"fieldname": "column_break_jkl4",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "exercise_frequency",
+			"fieldtype": "Select",
+			"label": "Exercise Frequency",
+			"options": "\nNone\nRarely\n1-2 times/week\n3-4 times/week\n5+ times/week"
+		},
+		{
+			"fieldname": "sleep_hours",
+			"fieldtype": "Float",
+			"label": "Sleep Hours per Night",
+			"precision": "1"
+		},
+		{
+			"fieldname": "stress_level",
+			"fieldtype": "Select",
+			"label": "Stress Level",
+			"options": "\nLow (1-3)\nModerate (4-6)\nHigh (7-10)"
+		},
+		{
+			"fieldname": "clinical_assessment_section",
+			"fieldtype": "Section Break",
+			"label": "Clinical Assessment"
+		},
+		{
+			"fieldname": "diagnosis",
+			"fieldtype": "Small Text",
+			"label": "Diagnosis"
+		},
+		{
+			"fieldname": "assessment_notes",
+			"fieldtype": "Text",
+			"label": "Assessment Notes"
+		},
+		{
+			"fieldname": "column_break_mno5",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "treatment_plan",
+			"fieldtype": "Text",
+			"label": "Treatment Plan"
+		},
+		{
+			"fieldname": "medications_prescribed",
+			"fieldtype": "Small Text",
+			"label": "Medications Prescribed"
+		},
+		{
+			"fieldname": "follow_up_section",
+			"fieldtype": "Section Break",
+			"label": "Follow-up"
+		},
+		{
+			"fieldname": "follow_up_required",
+			"fieldtype": "Check",
+			"label": "Follow-up Required"
+		},
+		{
+			"fieldname": "follow_up_date",
+			"fieldtype": "Date",
+			"depends_on": "follow_up_required",
+			"label": "Follow-up Date"
+		},
+		{
+			"fieldname": "column_break_pqr6",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "referral_required",
+			"fieldtype": "Check",
+			"label": "Referral Required"
+		},
+		{
+			"fieldname": "referral_to",
+			"fieldtype": "Data",
+			"depends_on": "referral_required",
+			"label": "Referral To"
+		},
+		{
+			"fieldname": "system_information_section",
+			"fieldtype": "Section Break",
+			"label": "System Information"
+		},
+		{
+			"fieldname": "created_by_user",
+			"fieldtype": "Data",
+			"label": "Created By",
+			"read_only": 1
+		},
+		{
+			"fieldname": "duration_minutes",
+			"fieldtype": "Int",
+			"label": "Duration (minutes)"
+		},
+		{
+			"fieldname": "column_break_stu7",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "billing_status",
+			"fieldtype": "Select",
+			"label": "Billing Status",
+			"options": "Not Applicable\nPending\nProcessed\nPaid",
+			"default": "Not Applicable"
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Small Text",
+			"label": "Additional Notes"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"is_submittable": 1,
+	"links": [],
+	"modified": "2025-01-21 10:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "CHMS",
+	"name": "Visit",
+	"naming_rule": "By Naming Series",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"submit": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Healthcare Administrator",
+			"share": 1,
+			"submit": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Healthcare Practitioner",
+			"share": 1,
+			"submit": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"title_field": "patient_name",
+	"track_changes": 1
+}
