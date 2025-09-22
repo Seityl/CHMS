@@ -1,0 +1,220 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:clinic_name",
+ "creation": "2025-01-21 10:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "clinic_details_section",
+  "clinic_name",
+  "clinic_code",
+  "description",
+  "column_break_abc1",
+  "clinic_type",
+  "status",
+  "established_date",
+  "contact_information_section",
+  "address_line_1",
+  "address_line_2",
+  "city",
+  "state",
+  "country",
+  "postal_code",
+  "column_break_def2",
+  "phone",
+  "email",
+  "website",
+  "staff_information_section",
+  "head_of_clinic",
+  "total_staff",
+  "column_break_jkl4",
+  "practitioners_count",
+  "administrative_staff_count"
+ ],
+ "fields": [
+  {
+   "fieldname": "clinic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Clinic Details"
+  },
+  {
+   "fieldname": "clinic_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Clinic Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "clinic_code",
+   "fieldtype": "Data",
+   "label": "Clinic Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_abc1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "clinic_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Clinic Type",
+   "options": "Primary Care\nSpecialty Clinic\nUrgent Care\nCorporate Health Center\nMobile Clinic\nOther"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nTemporarily Closed"
+  },
+  {
+   "fieldname": "established_date",
+   "fieldtype": "Date",
+   "label": "Established Date"
+  },
+  {
+   "fieldname": "contact_information_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "column_break_def2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State/Province"
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "label": "Postal Code"
+  },
+  {
+   "default": "Dominica",
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email Address",
+   "options": "Email"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website",
+   "options": "URL"
+  },
+  {
+   "fieldname": "staff_information_section",
+   "fieldtype": "Section Break",
+   "label": "Staff Information"
+  },
+  {
+   "fieldname": "head_of_clinic",
+   "fieldtype": "Link",
+   "label": "Head of Clinic",
+   "options": "CHMS Clinic Staff"
+  },
+  {
+   "fieldname": "total_staff",
+   "fieldtype": "Int",
+   "label": "Total Staff Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jkl4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "practitioners_count",
+   "fieldtype": "Int",
+   "label": "Practitioners Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "administrative_staff_count",
+   "fieldtype": "Int",
+   "label": "Administrative Staff Count",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-22 14:27:01.401898",
+ "modified_by": "Administrator",
+ "module": "CHMS",
+ "name": "CHMS Clinic",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Healthcare Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Healthcare Practitioner"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "clinic_name",
+ "track_changes": 1
+}

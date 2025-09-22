@@ -1,52 +1,68 @@
+# Copyright (c) 2025, Jollys Pharmacy Limited and contributors
+# For license information, please see license.txt
+
+import re
+
 import frappe
 from frappe.model.document import Document
-from frappe.utils import now, today
 
-
-class Clinic(Document):
+class CHMSClinic(Document):
 	def before_save(self):
-		"""Execute before saving clinic"""
-		self.set_created_by()
 		self.validate_clinic_data()
-		self.set_last_updated()
 	
 	def set_created_by(self):
-		"""Set created by user"""
 		if not self.created_by_user:
 			self.created_by_user = frappe.session.user
 	
-	def set_last_updated(self):
-		"""Set last updated timestamp"""
-		self.last_updated = now()
-	
 	def validate_clinic_data(self):
-		"""Validate clinic data"""
 		# Check if clinic code already exists
 		if self.clinic_code:
-			existing = frappe.db.exists("Clinic", {"clinic_code": self.clinic_code})
+			existing = frappe.db.exists('Clinic', {'clinic_code': self.clinic_code})
 			if existing and existing != self.name:
-				frappe.throw(f"Clinic with code {self.clinic_code} already exists")
+				frappe.throw(f'Clinic with code {self.clinic_code} already exists')
 		
 		# Validate email format
 		if self.email:
-			import re
 			email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
 			if not re.match(email_pattern, self.email):
-				frappe.throw("Please enter a valid email address")
+				frappe.throw('Please enter a valid email address')
 		
-		# Validate capacity
-		if self.capacity and self.capacity < 0:
-			frappe.throw("Patient capacity cannot be negative")
-		
-		# Validate staff counts
+		# Update & validate staff 
+		self.update_staff_counts()
+		self.validate_head_of_clinic()
+
 		if self.total_staff and self.total_staff < 0:
-			frappe.throw("Total staff count cannot be negative")
+			frappe.throw('Total staff count cannot be negative')
 		
 		if (self.practitioners_count and self.administrative_staff_count and 
 			self.total_staff and 
 			(self.practitioners_count + self.administrative_staff_count) > self.total_staff):
-			frappe.throw("Sum of practitioners and administrative staff cannot exceed total staff")
+			frappe.throw('Sum of practitioners and administrative staff cannot exceed total staff')
 	
+	def update_staff_counts(self):
+		admin_positions = frappe.db.get_all('CHMS Clinic Staff Position', {'is_admin': True}, pluck='name')
+		non_admin_positions = frappe.db.get_all('CHMS Clinic Staff Position', {'is_admin': False}, pluck='name')
+
+		self.practitioners_count = frappe.db.count('CHMS Clinic Staff', {'clinic': self.name, 'position': ['in', non_admin_positions]}) 
+		self.administrative_staff_count = frappe.db.count('CHMS Clinic Staff', {'clinic': self.name, 'position': ['in', admin_positions]}) 
+
+		self.total_staff = self.practitioners_count + self.administrative_staff_count
+
+	def validate_head_of_clinic(self):
+		if not self.head_of_clinic:
+			return
+
+		head_of_clinic = frappe.get_doc('CHMS Clinic Staff', self.head_of_clinic) 
+
+		if head_of_clinic.clinic != self.name:
+			frappe.throw(f'Head of staff is not assigned to clinic {self.name}.')
+
+		head_of_clinic_position = head_of_clinic.position
+		if not frappe.db.get_value('CHMS Clinic Staff Position', head_of_clinic_position, 'is_admin'):
+			frappe.throw(f'Head of staff is not a {self.name} admin.')
+	
+	# TODO: 22/09/25 Here onward is untested 
+ 
 	def get_clinic_statistics(self):
 		"""Get clinic statistics and utilization data"""
 		# Get visit count by period
